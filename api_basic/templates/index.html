@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet"> 
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 30px;
+    }
+
+
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body{
+        background-color: burlywood;
+    }
+
+    .container{
+        width: 600px;
+        margin: 20px;
+        background-color: white;
+        -webkit-box-shadow: 4px 12px 34px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 4px 12px 34px -6px rgba(0,0,0,0.75);
+        box-shadow: 4px 12px 34px -6px rgba(0,0,0,0.75);
+        border-radius: 10px;
+    }
+
+    .descriptionHolder{
+        display: flex;
+    }
+
+
+</style>
+
+<body>
+
+<h1>Aisha Gallery</h1>
+
+
+<div class="main">
+    {% for x in pics %}
+    <div class="container">
+        <p style="text-align: start;
+        font-size: 24px; padding: 10px;">
+            {{x.title}}
+        </p>
+        <div class="descriptionHolder">
+            <div class="img_holder" style="max-width: 300px; min-width: 300px;
+            height: 200px; background-image: url({{x.image.url}});
+            background-position: center; background-size: cover; border-radius: 0 0 0 10px;"></div> 
+
+            <p style="padding: 0 20px; font-size: 14px;">{{x.description}}</p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

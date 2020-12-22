@@ -1,0 +1,3 @@
+# DjangoModelPattern
+aidarsvd
+admin
