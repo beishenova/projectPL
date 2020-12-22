@@ -1,3 +1,3 @@
 # DjangoModelPattern
-aidarsvd
+beishenova
 admin
